@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.blog.dao.GetDao">
+    <select id="query" resultType="tags" parameterType="string">
+        select newsid from tag where tag=#{tag}
+    </select>
+    <select id="queryTags" resultType="String" parameterType="string">
+        select tag from tag where newsid=#{newsid}
+    </select>
+    <select id="queryNews" resultType="news" parameterType="string">
+        select * from news where newsid=#{newsid}
+    </select>
+    <select id="queryAll" resultType="news">
+        select * from news order by date desc
+    </select>
+</mapper>
