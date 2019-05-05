@@ -3,11 +3,12 @@ package com.example.blog.pojo;
 import org.apache.ibatis.type.Alias;
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
 import java.util.List;
-@Alias("news")
-@Component("news")
-public class News {
-    private String newsid;
+@Alias("blog")
+@Component("blog")
+public class Blog implements Serializable {
+    private String blogid;
     private String content;
     private String start;
     private String title;
@@ -43,16 +44,16 @@ public class News {
         return content;
     }
 
-    public String getNewsid() {
-        return newsid;
+    public String getBlogid() {
+        return blogid;
     }
 
     public void setContent(String content) {
         this.content = content;
     }
 
-    public void setNewsid(String newsid) {
-        this.newsid = newsid;
+    public void setBlogid(String blogid) {
+        this.blogid = blogid;
     }
 
     public String getStart() {
